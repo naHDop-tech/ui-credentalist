@@ -1,0 +1,19 @@
+{
+  "name": "ui-credentalist",
+  "version": "1.0.0",
+  "description": "view interface for password store service",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naHDop-tech/ui-credentalist.git"
+  },
+  "author": "Grigory Tarasov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naHDop-tech/ui-credentalist/issues"
+  },
+  "homepage": "https://github.com/naHDop-tech/ui-credentalist#readme"
+}
