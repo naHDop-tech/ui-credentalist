@@ -1,6 +1,7 @@
 import { memo, PropsWithChildren, useState, MouseEvent } from 'react';
+import { Login } from "@mui/icons-material"
 import { AppBar, Box, Toolbar } from "@mui/material";
-
+import IconButton from "@mui/material/IconButton";
 
 import { ThemeToggle } from "@components/ThemeToggle";
 import { AppBarUserMenu } from "@components/AppBarUserMenu";
@@ -18,6 +19,10 @@ const Layout = memo(function layoutRender(props: PropsWithChildren<{}>) {
     const handleClose = (id?: string) => {
         setAnchorEl(null);
     };
+    
+    const loginHandler = () => {
+        //
+    }
 
     return (
         <Box
@@ -30,12 +35,23 @@ const Layout = memo(function layoutRender(props: PropsWithChildren<{}>) {
             <AppBar color="default" position="static">
                 <Toolbar>
                     <AppBarMenu />
-                    {isAuth && (
+                    {isAuth ? (
                         <div>
                             <AppBarUserMenu menuHandler={handleMenu} anchor={anchorEl} closeHandler={handleClose} />
                             <ThemeToggle />
                         </div>
-                    )}
+                    ) : <div>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={loginHandler}
+                            color="inherit"
+                        >
+                            <Login />
+                        </IconButton>
+                    </div>}
                 </Toolbar>
             </AppBar>
             {children}

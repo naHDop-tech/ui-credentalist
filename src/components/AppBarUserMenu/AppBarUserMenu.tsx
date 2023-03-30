@@ -1,7 +1,7 @@
-import {memo, MouseEvent} from 'react';
+import { memo, MouseEvent } from 'react';
 import IconButton from "@mui/material/IconButton";
-import {AccountCircle} from "@mui/icons-material";
-import {Menu, MenuItem} from "@mui/material";
+import { AccountCircle } from "@mui/icons-material";
+import { Menu, MenuItem } from "@mui/material";
 
 export interface AppBarUserMenuProps {
     menuHandler: (event: MouseEvent<HTMLElement>) => void
@@ -41,7 +41,7 @@ export const AppBarUserMenu = memo(function renderAppBarUserMenu(props: AppBarUs
                     horizontal: 'right',
                 }}
                 open={!!anchor}
-                onClose={() => onCloseHandler()}
+                onClose={onCloseHandler}
             >
                 <MenuItem onClick={() => onCloseHandler("1")}>Profile</MenuItem>
                 <MenuItem onClick={() => onCloseHandler("2")}>My account</MenuItem>
