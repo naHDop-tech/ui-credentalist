@@ -7,7 +7,7 @@ import { ThemeToggle } from "@components/ThemeToggle";
 import { AppBarUserMenu } from "@components/AppBarUserMenu";
 import {AppBarMenu} from "@components/AppBarMenu";
 
-const Layout = memo(function layoutRender(props: PropsWithChildren<{}>) {
+export const Layout = memo(function layoutRender(props: PropsWithChildren<{}>) {
     const { children } = props
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const isAuth = true
@@ -58,5 +58,3 @@ const Layout = memo(function layoutRender(props: PropsWithChildren<{}>) {
         </Box>
     );
 })
-
-export default Layout;

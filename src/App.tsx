@@ -4,7 +4,7 @@ import './styles.css'
 
 import { useAppSelector, useAppDispatch } from "@root/store";
 import { selectCount, incrementBy, decrementBy, counterSlice } from '@store/counter'
-import Layout from "@components/Layout/Layout";
+import { Layout } from "@components/Layout/Layout";
 
 export function App() {
     const counter = useAppSelector(selectCount)
