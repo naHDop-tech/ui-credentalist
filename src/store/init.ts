@@ -3,12 +3,14 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import counter from '@store/counter'
 
-const reducer = combineReducers({
-    counter
-})
+// const reducer = combineReducers({
+//     counter
+// })
 
 export const store = configureStore({
-    reducer
+    reducer: {
+        counter
+    }
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -37,10 +37,14 @@ export const counterSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(incrementBy, (state, action) => {
-            return state + action.payload
+            // @ts-ignore
+            state.value += action.payload
+            return state
         })
         builder.addCase(decrementBy, (state, action) => {
-            return state - action.payload
+            // @ts-ignore
+            state.value -= action.payload
+            return state
         })
     },
 })
