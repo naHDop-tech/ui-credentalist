@@ -18,26 +18,26 @@ export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        increment: state => {
+        increment: (state: CounterState) => {
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
             // which detects changes to a "draft state" and produces a brand new
             // immutable state based off those changes
             state.value += 1
         },
-        decrement: state => {
+        decrement: (state: CounterState) => {
             state.value -= 1
         },
-        incrementByAmount: (state, action: PayloadAction<number>) => {
+        incrementByAmount: (state: CounterState, action: PayloadAction<number>) => {
             state.value += action.payload
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(incrementBy, (state, action) => {
+        builder.addCase(incrementBy, (state: CounterState, action) => {
             state.value += action.payload
             return state
         })
-        builder.addCase(decrementBy, (state, action) => {
+        builder.addCase(decrementBy, (state: CounterState, action) => {
             state.value -= action.payload
             return state
         })
@@ -47,7 +47,6 @@ export const counterSlice = createSlice({
 export const { increment, decrement, incrementByAmount } = counterSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-// @ts-ignore
 export const selectCount = (state: RootState) => state.counter.value
 
 export default counterSlice.reducer

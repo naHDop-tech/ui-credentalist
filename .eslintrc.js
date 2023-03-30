@@ -12,7 +12,11 @@ module.exports = {
             version: 'detect',
         },
     },
+    plugins: [
+        "react-redux"
+    ],
     extends: [
+        "plugin:react-redux/recommended",
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/recommended',

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import './styles.css'
 
 import { useAppSelector, useAppDispatch } from "@root/store";
-import { selectCount, increment, decrement, incrementBy, decrementBy } from '@store/counter'
+import { selectCount, incrementBy, decrementBy, counterSlice } from '@store/counter'
 import { ThemeToggle } from "@components/ThemeToggle/ThemeToggle";
 
 export function App() {
@@ -21,8 +21,8 @@ export function App() {
             <ThemeToggle />
             <div>Credentalist app</div>
             <div>{counter}</div>
-            <Button variant="contained" onClick={() => dispatch(increment())}>Inc</Button>
-            <Button variant="outlined" onClick={() => dispatch(decrement())}>Dec</Button>
+            <Button variant="contained" onClick={() => dispatch(counterSlice.actions.increment())}>Inc</Button>
+            <Button variant="outlined" onClick={() => dispatch(counterSlice.actions.decrement())}>Dec</Button>
             <div><br/></div>
             <Button variant="contained" onClick={() => dispatch(incrementBy(1))}>AsyncInc</Button>
             <Button variant="outlined" onClick={() => dispatch(decrementBy(1))}>AsyncDec</Button>
