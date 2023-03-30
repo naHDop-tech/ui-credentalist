@@ -4,7 +4,6 @@ import './styles.css'
 
 import { useAppSelector, useAppDispatch } from "@root/store";
 import { selectCount, incrementBy, decrementBy, counterSlice } from '@store/counter'
-import { ThemeToggle } from "@components/ThemeToggle/ThemeToggle";
 import Layout from "@components/Layout/Layout";
 
 export function App() {
