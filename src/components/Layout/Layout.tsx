@@ -1,28 +1,10 @@
-import React, { memo, PropsWithChildren, useState, MouseEvent } from 'react'
-import { Login } from '@mui/icons-material'
-import { AppBar, Box, Toolbar } from '@mui/material'
-import IconButton from '@mui/material/IconButton'
+import React, { PropsWithChildren } from 'react'
+import { Box } from '@mui/material'
 
-import { ThemeToggle } from '@components/ThemeToggle'
-import { AppBarUserMenu } from '@components/AppBarUserMenu'
-import { AppBarMenu } from '@components/AppBarMenu'
+import { AppBar } from '@components/AppBar'
 
-function Layout(props: PropsWithChildren<null>) {
+function Layout(props: PropsWithChildren<Record<string, never>>) {
   const { children } = props
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const isAuth = true
-
-  const handleMenu = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = (id?: string) => {
-    setAnchorEl(null)
-  }
-
-  const loginHandler = () => {
-    //
-  }
 
   return (
     <Box
@@ -32,37 +14,10 @@ function Layout(props: PropsWithChildren<null>) {
         color: 'text.primary',
       }}
     >
-      <AppBar color="default" position="static">
-        <Toolbar>
-          <AppBarMenu />
-          {isAuth ? (
-            <div>
-              <AppBarUserMenu
-                menuHandler={handleMenu}
-                anchor={anchorEl}
-                closeHandler={handleClose}
-              />
-              <ThemeToggle />
-            </div>
-          ) : (
-            <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={loginHandler}
-                color="inherit"
-              >
-                <Login />
-              </IconButton>
-            </div>
-          )}
-        </Toolbar>
-      </AppBar>
+      <AppBar />
       {children}
     </Box>
   )
 }
 
-export default memo(Layout)
+export default Layout
