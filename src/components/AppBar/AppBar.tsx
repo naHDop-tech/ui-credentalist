@@ -1,10 +1,10 @@
 import React, { memo, MouseEvent, useState } from 'react';
-import { Toolbar, AppBar as Bar } from "@mui/material";
+import { Toolbar, AppBar as Bar, Link } from "@mui/material";
+import { Login } from "@mui/icons-material";
+
 import { AppBarMenu } from "@components/AppBarMenu";
 import { AppBarUserMenu } from "@components/AppBarUserMenu";
 import { ThemeToggle } from "@components/ThemeToggle";
-import IconButton from "@mui/material/IconButton";
-import { Login } from "@mui/icons-material";
 
 function renderAppBar() {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -17,10 +17,7 @@ function renderAppBar() {
     const handleClose = (id?: string) => {
         setAnchorEl(null)
     }
-
-    const loginHandler = () => {
-        //
-    }
+    
     return (
         <Bar color="default" position="static">
             <Toolbar>
@@ -36,16 +33,7 @@ function renderAppBar() {
                     </div>
                 ) : (
                     <div>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={loginHandler}
-                            color="inherit"
-                        >
-                            <Login />
-                        </IconButton>
+                        <Link href="login"><Login /></Link>
                     </div>
                 )}
             </Toolbar>

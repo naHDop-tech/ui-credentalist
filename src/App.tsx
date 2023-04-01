@@ -1,25 +1,32 @@
 import React from 'react'
-import Button from '@mui/material/Button';
+
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
 
 import './styles.css'
 
-import { useAppSelector, useAppDispatch } from "@root/store";
-import { selectCount, incrementBy, decrementBy, counterSlice } from '@store/counter'
 import Layout from "@components/Layout/Layout";
+import Test from "@components/Test/Test";
+import Login from "@components/Login/Login";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Test />,
+    },
+    {
+        path: "login",
+        element: <Login />,
+    },
+]);
 
 export function App() {
-    const counter = useAppSelector(selectCount)
-    const dispatch = useAppDispatch()
 
     return (
         <Layout>
-            <div>Credentalist app</div>
-            <div>{counter}</div>
-            <Button variant="contained" onClick={() => dispatch(counterSlice.actions.increment())}>Inc</Button>
-            <Button variant="outlined" onClick={() => dispatch(counterSlice.actions.decrement())}>Dec</Button>
-            <div><hr/></div>
-            <Button variant="contained" onClick={() => dispatch(incrementBy(1))}>AsyncInc</Button>
-            <Button variant="outlined" onClick={() => dispatch(decrementBy(1))}>AsyncDec</Button>
+            <RouterProvider router={router} />
         </Layout>
     );
 }
