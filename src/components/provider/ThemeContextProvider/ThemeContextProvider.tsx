@@ -1,9 +1,10 @@
-import { useMemo, useState } from "react";
+import React, { PropsWithChildren, useMemo, useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { ColorModeContext } from "@root/context/theme";
 
-export function ThemeContextProvider({ children }) {
+export function ThemeContextProvider(props: PropsWithChildren<Record<string, never>>) {
+    const { children } = props
     const [mode, setMode] = useState<'light' | 'dark'>('light');
     const colorMode = useMemo(
         () => ({

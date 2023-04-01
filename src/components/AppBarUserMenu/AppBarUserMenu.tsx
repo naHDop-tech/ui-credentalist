@@ -1,4 +1,4 @@
-import { memo, MouseEvent } from 'react';
+import React, { memo, MouseEvent } from 'react';
 import IconButton from "@mui/material/IconButton";
 import { AccountCircle } from "@mui/icons-material";
 import { Menu, MenuItem } from "@mui/material";
