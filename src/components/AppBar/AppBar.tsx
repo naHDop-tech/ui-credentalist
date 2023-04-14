@@ -8,7 +8,7 @@ import { ThemeToggle } from "@components/ThemeToggle";
 
 function renderAppBar() {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-    const isAuth = true
+    const isAuth = false
 
     const handleMenu = (event: MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget)
